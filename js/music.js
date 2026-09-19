@@ -6,8 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // PASTE YOUR EMBED URLS HERE!
   const tracks = [
-    { title: 'Curtain Call',  artist: 'Tani Yuuki — Opening Theme', dur: 'N/A', src: 'PASTE_EMBED_URL_HERE' },
-    { title: 'Himitsu',       artist: 'Aimer — Ending Theme',        dur: 'N/A', src: 'PASTE_EMBED_URL_HERE' },
+    { title: 'Curtain Call',  artist: 'Tani Yuuki — Opening Theme', dur: 'N/A', src: 'https://www.youtube.com/embed/CNeKh1YxQio?autoplay=1' },
+    { title: 'Himitsu',       artist: 'Aimer — Ending Theme',        dur: 'N/A', src: 'https://www.youtube.com/embed/A7cp6OVa0Qc?autoplay=1' },
     { title: 'Blue Morning',  artist: 'Blue Box OST',                 dur: 'N/A', src: 'PASTE_EMBED_URL_HERE' },
     { title: 'Gymnasium',     artist: 'Blue Box OST',                 dur: 'N/A', src: 'PASTE_EMBED_URL_HERE' },
     { title: 'Evening Sky',   artist: 'Blue Box OST',                 dur: 'N/A', src: 'PASTE_EMBED_URL_HERE' },
