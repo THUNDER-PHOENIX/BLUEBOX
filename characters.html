@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Characters | Blue Box</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/characters.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;900&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body class="dark-mode">
+
+  <!-- LOADER -->
+  <div id="loader">
+    <div class="loader-box">
+      <div class="loader-logo">青の箱</div>
+      <div class="loader-subtitle">Characters</div>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <div class="nav-logo">
+      <span class="nav-logo-jp">青の箱</span>
+      <span class="nav-logo-en">Blue Box</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="characters.html" class="active">Characters</a></li>
+      <li><a href="lore.html">Story</a></li>
+      <li><a href="music.html">Music</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button id="theme-toggle"><i class="fas fa-moon"></i></button>
+      <button id="music-toggle"><i class="fas fa-music"></i></button>
+      <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <section class="page-hero">
+    <div class="page-hero-content">
+      <div class="section-tag">Cast</div>
+      <h1 class="page-title">Characters</h1>
+      <p class="page-subtitle">The hearts behind the story — meet the people of Blue Box.</p>
+    </div>
+  </section>
+
+  <!-- FILTER TABS -->
+  <section class="char-filters-section">
+    <div class="container">
+      <div class="char-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="main">Main Cast</button>
+        <button class="filter-btn" data-filter="support">Supporting</button>
+        <button class="filter-btn" data-filter="badminton">Badminton</button>
+        <button class="filter-btn" data-filter="basketball">Basketball</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHARACTERS GRID -->
+  <section class="section">
+    <div class="container">
+      <div class="chars-full-grid" id="chars-grid">
+
+        <!-- TAIKI -->
+        <div class="char-profile reveal" id="taiki" data-tags="main badminton">
+          <div class="char-profile-left">
+            <div class="char-big-avatar taiki-avatar-big">
+              <i class="fas fa-shuttlecock"></i>
+            </div>
+            <div class="char-sport-badge badminton-badge">
+              <i class="fas fa-shuttlecock"></i> Badminton
+            </div>
+          </div>
+          <div class="char-profile-right">
+            <div class="char-name-block">
+              <span class="char-name-jp">稲本 大樹</span>
+              <h2 class="char-name-en">Taiki Inomata</h2>
+              <span class="char-tag-role">Protagonist</span>
+            </div>
+            <div class="char-stats-row">
+              <div class="char-stat"><span>Age</span><strong>16</strong></div>
+              <div class="char-stat"><span>Year</span><strong>1st</strong></div>
+              <div class="char-stat"><span>Club</span><strong>Badminton</strong></div>
+              <div class="char-stat"><span>Goal</span><strong>National</strong></div>
+            </div>
+            <div class="char-personality">
+              <span class="trait">Earnest</span>
+              <span class="trait">Hardworking</span>
+              <span class="trait">Shy</span>
+              <span class="trait">Determined</span>
+            </div>
+            <p class="char-bio">
+              A first-year student with a burning passion for badminton, Taiki dedicates every morning
+              to training in the gym. He falls deeply in love with Chinatsu Kano after watching her
+              play basketball. When Chinatsu unexpectedly becomes his housemate, Taiki must navigate
+              the impossible challenge of keeping his feelings secret while growing closer to her every day.
+            </p>
+            <div class="char-quote">
+              <i class="fas fa-quote-left"></i>
+              <p>"I'll become someone worthy of standing beside her."</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- CHINATSU -->
+        <div class="char-profile reveal delay-1" id="chinatsu" data-tags="main basketball">
+          <div class="char-profile-left">
+            <div class="char-big-avatar chinatsu-avatar-big">
+              <i class="fas fa-basketball"></i>
+            </div>
+            <div class="char-sport-badge basketball-badge">
+              <i class="fas fa-basketball"></i> Basketball
+            </div>
+          </div>
+          <div class="char-profile-right">
+            <div class="char-name-block">
+              <span class="char-name-jp">加納 千夏</span>
+              <h2 class="char-name-en">Chinatsu Kano</h2>
+              <span class="char-tag-role">Main Heroine</span>
+            </div>
+            <div class="char-stats-row">
+              <div class="char-stat"><span>Age</span><strong>16</strong></div>
+              <div class="char-stat"><span>Year</span><strong>1st</strong></div>
+              <div class="char-stat"><span>Club</span><strong>Basketball</strong></div>
+              <div class="char-stat"><span>Goal</span><strong>National</strong></div>
+            </div>
+            <div class="char-personality">
+              <span class="trait trait-pink">Cool</span>
+              <span class="trait trait-pink">Dedicated</span>
+              <span class="trait trait-pink">Warm</span>
+              <span class="trait trait-pink">Talented</span>
+            </div>
+            <p class="char-bio">
+              An exceptionally talented basketball player admired throughout the school, Chinatsu carries
+              a calm and collected aura. Beneath her composed exterior is a warm, caring person who
+              pours everything into her sport. After a series of circumstances, she moves into Taiki's
+              home — turning both their worlds upside down.
+            </p>
+            <div class="char-quote">
+              <i class="fas fa-quote-left"></i>
+              <p>"I don't want to rely on others. But maybe… that's okay sometimes."</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- HINA -->
+        <div class="char-profile reveal delay-2" id="hina" data-tags="support">
+          <div class="char-profile-left">
+            <div class="char-big-avatar hina-avatar-big">
+              <i class="fas fa-star"></i>
+            </div>
+            <div class="char-sport-badge hina-badge">
+              <i class="fas fa-home"></i> At Home
+            </div>
+          </div>
+          <div class="char-profile-right">
+            <div class="char-name-block">
+              <span class="char-name-jp">稲本 陽菜</span>
+              <h2 class="char-name-en">Hina Inomata</h2>
+              <span class="char-tag-role">Taiki's Sister</span>
+            </div>
+            <div class="char-stats-row">
+              <div class="char-stat"><span>Age</span><strong>13</strong></div>
+              <div class="char-stat"><span>Year</span><strong>Middle</strong></div>
+              <div class="char-stat"><span>Club</span><strong>—</strong></div>
+              <div class="char-stat"><span>Role</span><strong>Mood Maker</strong></div>
+            </div>
+            <div class="char-personality">
+              <span class="trait trait-yellow">Cheerful</span>
+              <span class="trait trait-yellow">Energetic</span>
+              <span class="trait trait-yellow">Perceptive</span>
+              <span class="trait trait-yellow">Loving</span>
+            </div>
+            <p class="char-bio">
+              Taiki's younger sister who immediately falls in love with Chinatsu. Hina acts as the
+              heart of the household — always bright, energetic, and somehow knowing exactly what
+              everyone is feeling. She supports her brother's feelings from the shadows while
+              treating Chinatsu like an older sister she always wanted.
+            </p>
+            <div class="char-quote">
+              <i class="fas fa-quote-left"></i>
+              <p>"Chinatsu-san is the best! I want her to stay foreveeer!"</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- KYO -->
+        <div class="char-profile reveal delay-3" id="kyo" data-tags="support badminton">
+          <div class="char-profile-left">
+            <div class="char-big-avatar kyo-avatar-big">
+              <i class="fas fa-user-friends"></i>
+            </div>
+            <div class="char-sport-badge kyo-badge">
+              <i class="fas fa-shuttlecock"></i> Badminton
+            </div>
+          </div>
+          <div class="char-profile-right">
+            <div class="char-name-block">
+              <span class="char-name-jp">笠原 恭</span>
+              <h2 class="char-name-en">Kyo Kasahara</h2>
+              <span class="char-tag-role">Best Friend</span>
+            </div>
+            <div class="char-stats-row">
+              <div class="char-stat"><span>Age</span><strong>16</strong></div>
+              <div class="char-stat"><span>Year</span><strong>1st</strong></div>
+              <div class="char-stat"><span>Club</span><strong>Badminton</strong></div>
+              <div class="char-stat"><span>Role</span><strong>Wingman</strong></div>
+            </div>
+            <div class="char-personality">
+              <span class="trait trait-green">Easygoing</span>
+              <span class="trait trait-green">Loyal</span>
+              <span class="trait trait-green">Perceptive</span>
+              <span class="trait trait-green">Funny</span>
+            </div>
+            <p class="char-bio">
+              Taiki's best friend and badminton club teammate. Kyo is easygoing and laid-back but
+              surprisingly perceptive when it comes to emotions and relationships. He's the first
+              to notice Taiki's feelings for Chinatsu and becomes his biggest (if teasing) supporter.
+              A reliable presence both on and off the court.
+            </p>
+            <div class="char-quote">
+              <i class="fas fa-quote-left"></i>
+              <p>"Bro, just tell her already. I'm dying watching you hold it in."</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-logo">
+        <span class="footer-logo-jp">青の箱</span>
+        <span class="footer-logo-en">Blue Box Fan Site</span>
+      </div>
+      <p class="footer-disclaimer">Fan-made site. Blue Box © Kouji Miura / Shueisha.</p>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="characters.html">Characters</a>
+        <a href="lore.html">Story</a>
+        <a href="music.html">Music</a>
+        <a href="gallery.html">Gallery</a>
+      </div>
+      <p class="footer-copy">Made with ❤️ by a Blue Box fan</p>
+    </div>
+  </footer>
+
+  <div id="music-player"><audio id="bg-audio" loop></audio></div>
+
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/characters.js"></script>
+</body>
+</html>
