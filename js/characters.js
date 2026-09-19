@@ -4,39 +4,41 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // ---- FILTER BUTTONS ----
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const charCards  = document.querySelectorAll('.char-profile');
+  // Audio Manager for Characters
+  const voicePlayer = new Audio();
+  const bgPlayer = new Audio(); // Assuming character BGM
 
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+  // Placeholder for Character Audio Data (to be updated)
+  const charAudioData = {
+    taiki: { voice: 'path/to/taiki_voice.mp3', bgm: 'path/to/taiki_bgm.mp3' },
+    chinatsu: { voice: 'path/to/chinatsu_voice.mp3', bgm: 'path/to/chinatsu_bgm.mp3' },
+    hina: { voice: 'path/to/hina_voice.mp3', bgm: 'path/to/hina_bgm.mp3' },
+    kyo: { voice: 'path/to/kyo_voice.mp3', bgm: 'path/to/kyo_bgm.mp3' }
+  };
 
-      const filter = btn.dataset.filter;
+  const charProfiles = document.querySelectorAll('.char-profile');
 
-      charCards.forEach(card => {
-        const tags = card.dataset.tags || '';
-        if (filter === 'all' || tags.includes(filter)) {
-          card.classList.remove('hidden');
-          card.style.animation = 'fadeInUp 0.4s ease forwards';
-        } else {
-          card.classList.add('hidden');
-        }
-      });
+  charProfiles.forEach(profile => {
+    profile.addEventListener('click', () => {
+      const charId = profile.getAttribute('data-char');
+      if (charId && charAudioData[charId]) {
+        playCharacterAudio(charAudioData[charId]);
+      }
     });
   });
 
-  // ---- HASH SCROLL (e.g. characters.html#chinatsu) ----
-  if (window.location.hash) {
-    setTimeout(() => {
-      const target = document.querySelector(window.location.hash);
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        target.style.boxShadow = '0 0 60px rgba(59,130,246,0.5)';
-        setTimeout(() => { target.style.boxShadow = ''; }, 2000);
-      }
-    }, 2600);
-  }
+  function playCharacterAudio(audioFiles) {
+    // Stop previous
+    voicePlayer.pause();
+    bgPlayer.pause();
 
+    // Set and play new
+    voicePlayer.src = audioFiles.voice;
+    bgPlayer.src = audioFiles.bgm;
+    bgPlayer.loop = true;
+    bgPlayer.volume = 0.3;
+
+    voicePlayer.play().catch(e => console.log('Voice play blocked', e));
+    bgPlayer.play().catch(e => console.log('BGM play blocked', e));
+  }
 });
