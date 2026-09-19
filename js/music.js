@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { title: 'Blue Morning',  artist: 'Blue Box OST',                 dur: 'N/A', src: 'https://www.youtube.com/embed/0CFR8nHn-4U?autoplay=1' },
     { title: 'Gymnasium',     artist: 'Blue Box OST',                 dur: 'N/A', src: 'https://www.youtube.com/embed/YygpCEv_Y74?autoplay=1' },
     { title: 'Evening Sky',   artist: 'Blue Box OST',                 dur: 'N/A', src: 'https://www.youtube.com/embed/LNXZUfhpmx8?autoplay=1' },
-    { title: 'First Serve',   artist: 'Blue Box OST',                 dur: 'N/A', src: 'PASTE_EMBED_URL_HERE' },
+    { title: 'First Serve',   artist: 'Blue Box OST',                 dur: 'N/A', src: 'https://www.youtube.com/embed/f118SJoZ5j0?autoplay=1' },
   ];
 
   let currentTrack = 0;
