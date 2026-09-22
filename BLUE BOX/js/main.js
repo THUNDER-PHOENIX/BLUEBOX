@@ -1,5 +1,5 @@
 // ============================================
-//   BLUE BOX — Main JS
+//   BLUE BOX — Main JavaScript
 // ============================================
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
       spans[0].style.transform = navLinks.classList.contains('open') ? 'rotate(45deg) translate(5px, 5px)' : '';
       spans[1].style.opacity   = navLinks.classList.contains('open') ? '0' : '1';
       spans[2].style.transform = navLinks.classList.contains('open') ? 'rotate(-45deg) translate(5px, -5px)' : '';
+      hamburger.classList.toggle('active', navLinks.classList.contains('open'));
     });
     // Close on nav link click
     navLinks.querySelectorAll('a').forEach(link => {
@@ -111,3 +112,38 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
+// Particles.js for hero section
+document.addEventListener('DOMContentLoaded', () => {
+  const particlesContainer = document.getElementById('particles');
+  if (particlesContainer) {
+    particlesContainer.innerHTML = '';
+    const particleCount = 50;
+
+    for (let i = 0; i < particleCount; i++) {
+      const particle = document.createElement('div');
+      particle.className = 'particle';
+      particle.style.position = 'absolute';
+      particle.style.width = Math.random() * 4 + 1 + 'px';
+      particle.style.height = particle.style.width;
+      particle.style.background = `linear-gradient(135deg, ${getRandomBlue()}, ${getRandomAccent()})`;
+      particle.style.borderRadius = '50%';
+      particle.style.opacity = Math.random() * 0.5 + 0.1;
+      particle.style.left = Math.random() * 100 + '%';
+      particle.style.top = Math.random() * 100 + '%';
+      particle.style.animation = `float ${Math.random() * 10 + 10}s linear infinite`;
+      particle.style.animationDelay = Math.random() * 20 + 's';
+      particlesContainer.appendChild(particle);
+    }
+  }
+});
+
+function getRandomBlue() {
+  const blues = ['#3b82f6', '#60a5fa', '#1d4ed8', '#2563eb', '#1e40af'];
+  return blues[Math.floor(Math.random() * blues.length)];
+}
+
+function getRandomAccent() {
+  const accents = ['#f472b6', '#ec4899', '#db2777', '#be185d', '#9d174d'];
+  return accents[Math.floor(Math.random() * accents.length)];
+}

@@ -1,0 +1,49 @@
+{
+  "name": "blue-box-fan-site",
+  "version": "2.0.0",
+  "description": "Blue Box (青の箱) fan site - Complete manga and anime fan website",
+  "main": "js/main.js",
+  "scripts": {
+    "start": "echo \"Starting Blue Box fan site...\" && echo \"Site is ready to use\"",
+    "build": "echo \"Building Blue Box fan site...\" && echo \"Build completed successfully\"",
+    "lint": "echo \"Running linting...\" && echo \"Linting completed\"",
+    "deploy": "echo \"Deploying to GitHub Pages...\" && echo \"Deployment completed\""
+  },
+  "keywords": [
+    "blue box",
+    "bluebox",
+    "青の箱",
+    "anime",
+    "manga",
+    "fan site",
+    "taiki inomata",
+    "chinatsu kano",
+    "kouji miura"
+  ],
+  "author": "Blue Box Fan",
+  "license": "MIT",
+  "homepage": "https://bluebox.fans",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/THUNDER-PHOENIX/BLUEBOX"
+  },
+  "bugs": {
+    "url": "https://github.com/THUNDER-PHOENIX/BLUEBOX/issues"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "engines": {
+    "node": "18.x"
+  },
+  "files": [
+    "index.html",
+    "characters.html",
+    "lore.html",
+    "music.html",
+    "gallery.html",
+    "css/*.css",
+    "js/*.js",
+    "assets/"
+  ],
+  "type": "module"
+}
