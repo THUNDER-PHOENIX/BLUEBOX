@@ -3,15 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blue Box | Ao no Hako</title>
+  <title>Blue Box | Ao no Hako - Complete Fan Site</title>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/hero.css" />
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;900&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body class="dark-mode">
 
-  <!-- ======= LOADER ======= -->
+  <!-- LOADER -->
   <div id="loader">
     <div class="loader-box">
       <div class="loader-logo">青の箱</div>
@@ -20,7 +21,7 @@
     </div>
   </div>
 
-  <!-- ======= NAVBAR ======= -->
+  <!-- NAVBAR -->
   <nav id="navbar">
     <div class="nav-logo">
       <span class="nav-logo-jp">青の箱</span>
@@ -40,29 +41,45 @@
     </div>
   </nav>
 
-  <!-- ======= HERO ======= -->
+  <!-- HERO SECTION -->
   <section id="hero">
-    <div class="hero-particles" id="particles"></div>
-    <div class="hero-overlay"></div>
     <div class="hero-content">
-      <div class="hero-badge">Manga & Anime</div>
+      <div class="hero-badge">Weekly Shōnen Jump</div>
       <h1 class="hero-title">
         <span class="hero-jp">青の箱</span>
         <span class="hero-en">Blue Box</span>
       </h1>
-      <p class="hero-tagline">A story of youth, dreams, and love — one blue box at a time.</p>
+      <p class="hero-tagline">
+        From <strong>April 12, 2021</strong> | <strong>Ongoing</strong> | <strong>175+ Chapters</strong> | <strong>Anime: October 2024</strong>
+      </p>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="stat-num">200</span>
+          <span class="stat-label">Fans</span>
+        </div>
+        <div class="hero-stat">
+          <span class="stat-num">2024</span>
+          <span class="stat-label">Anime</span>
+        </div>
+        <div class="hero-stat">
+          <span class="stat-num">Jump</span>
+          <span class="stat-label">Serial</span>
+        </div>
+      </div>
       <div class="hero-btns">
-        <a href="characters.html" class="btn btn-primary">Meet the Characters</a>
-        <a href="lore.html" class="btn btn-outline">Explore the Story</a>
+        <a href="characters.html" class="btn btn-primary">Meet Characters</a>
+        <a href="lore.html" class="btn btn-outline">Story Timeline</a>
       </div>
     </div>
+    <div class="hero-particles" id="particles"></div>
+    <div class="hero-overlay"></div>
     <div class="hero-scroll-hint">
-      <span>Scroll Down</span>
+      <span>Explore</span>
       <i class="fas fa-chevron-down bounce"></i>
     </div>
   </section>
 
-  <!-- ======= ABOUT ======= -->
+  <!-- ABOUT SECTION -->
   <section id="about" class="section">
     <div class="container">
       <div class="section-tag">About the Series</div>
@@ -71,44 +88,42 @@
         <div class="about-text">
           <p>
             <strong>Blue Box (青の箱, Ao no Hako)</strong> is a Japanese manga series written and illustrated by
-            <strong>Kouji Miura</strong>. Serialized in Weekly Shōnen Jump since 2021, the story follows
-            <strong>Taiki Inomata</strong>, a badminton club member who falls in love with
+            <strong>Kouji Miura</strong>. Serialized in <strong>Weekly Shōnen Jump</strong> since <strong>April 12, 2021</strong>,
+            the story follows <strong>Taiki Inomata</strong>, a badminton club member who falls in love with
             <strong>Chinatsu Kano</strong>, a basketball ace from his school.
           </p>
           <p>
             By a twist of fate, Chinatsu moves into Taiki's house as a lodger, turning his everyday life
             into a beautiful, nerve-wracking adventure of feelings left unsaid and dreams chased with full heart.
           </p>
-          <div class="about-stats">
-            <div class="stat-card">
-              <span class="stat-num">200+</span>
-              <span class="stat-label">Chapters</span>
+          <div class="about-highlights">
+            <div class="highlight-item">
+              <i class="fas fa-calendar"></i>
+              <span>Started April 12, 2021</span>
             </div>
-            <div class="stat-card">
-              <span class="stat-num">2021</span>
-              <span class="stat-label">Serialized</span>
+            <div class="highlight-item">
+              <i class="fas fa-book"></i>
+              <span>175+ Chapters (Ongoing)</span>
             </div>
-            <div class="stat-card">
-              <span class="stat-num">Weekly</span>
-              <span class="stat-label">Jump</span>
-            </div>
-            <div class="stat-card">
-              <span class="stat-num">2024</span>
-              <span class="stat-label">Anime</span>
+            <div class="highlight-item">
+              <i class="fas fa-tv"></i>
+              <span>Anime: October 2024</span>
             </div>
           </div>
         </div>
-        <div class="about-image-wrap">
-          <div class="about-image-placeholder">
-            <i class="fas fa-book-open"></i>
-            <span>Blue Box</span>
+        <div class="about-image">
+          <div class="about-character-circle">
+            <img src="assets/images/taiki.jpg" alt="Taiki Inomata" class="char-main-img" />
+            <img src="assets/images/chinatsu.jpg" alt="Chinatsu Kano" class="char-main-img" />
+            <img src="assets/images/kyo.jpg" alt="Kyo Kasahara" class="char-main-img" />
+            <img src="assets/images/hina.jpg" alt="Hina Inomata" class="char-main-img" />
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ======= CHARACTERS PREVIEW ======= -->
+  <!-- CHARACTERS PREVIEW -->
   <section id="chars-preview" class="section dark-section">
     <div class="container">
       <div class="section-tag">Cast</div>
@@ -124,7 +139,7 @@
             </div>
             <div class="char-back">
               <h3>Taiki Inomata</h3>
-              <p>A hardworking badminton player who falls head over heels for Chinatsu. Earnest, determined, and hopelessly in love.</p>
+              <p>Determined badminton player with big dreams, deeply in love with Chinatsu who moved into his house.</p>
               <a href="characters.html#taiki" class="btn btn-sm">Full Profile</a>
             </div>
           </div>
@@ -135,11 +150,11 @@
             <div class="char-front">
               <div class="char-avatar chinatsu-avatar"><img src="assets/images/chinatsu.jpg" alt="Chinatsu Kano" /></div>
               <h3>Chinatsu Kano</h3>
-              <span class="char-role">Heroine · Basketball</span>
+              <span class="char-role">Main Heroine · Basketball</span>
             </div>
             <div class="char-back">
               <h3>Chinatsu Kano</h3>
-              <p>A talented basketball player admired by everyone. Cool on the outside, warm on the inside — and Taiki's housemate.</p>
+              <p>Talent basketball player admired by everyone, cool on the outside but warm within, and Taiki's new housemate.</p>
               <a href="characters.html#chinatsu" class="btn btn-sm">Full Profile</a>
             </div>
           </div>
@@ -154,7 +169,7 @@
             </div>
             <div class="char-back">
               <h3>Hina Inomata</h3>
-              <p>Taiki's energetic little sister who absolutely adores Chinatsu. Always cheerful and the mood-maker of the house.</p>
+              <p>Taiki's energetic little sister who adores Chinatsu and is the mood-maker of the house.</p>
               <a href="characters.html#hina" class="btn btn-sm">Full Profile</a>
             </div>
           </div>
@@ -165,11 +180,11 @@
             <div class="char-front">
               <div class="char-avatar kyo-avatar"><img src="assets/images/kyo.jpg" alt="Kyo Kasahara" /></div>
               <h3>Kyo Kasahara</h3>
-              <span class="char-role">Taiki's Best Friend</span>
+              <span class="char-role">Best Friend</span>
             </div>
             <div class="char-back">
               <h3>Kyo Kasahara</h3>
-              <p>Taiki's reliable best friend and badminton teammate. Easygoing and perceptive — always has Taiki's back.</p>
+              <p>Taiki's reliable best friend and badminton teammate, supportive and perceptive of emotions.</p>
               <a href="characters.html#kyo" class="btn btn-sm">Full Profile</a>
             </div>
           </div>
@@ -182,57 +197,48 @@
     </div>
   </section>
 
-  <!-- ======= STORY ARC PREVIEW ======= -->
-  <section id="arcs-preview" class="section">
+  <!-- STORY PREVIEW -->
+  <section id="story-preview" class="section">
     <div class="container">
       <div class="section-tag">Story</div>
-      <h2 class="section-title">Story Arcs</h2>
-      <div class="arcs-timeline">
-        <div class="arc-item">
-          <div class="arc-dot"></div>
+      <h2 class="section-title">Current Story Arcs</h2>
+      <div class="story-timeline">
+        <div class="story-arc">
+          <div class="arc-number">Arc 01</div>
           <div class="arc-content">
-            <span class="arc-chapters">Ch. 1–30</span>
             <h3>The Encounter</h3>
-            <p>Taiki discovers his feelings for Chinatsu. By a twist of fate, she moves into his home.</p>
+            <span class="arc-chapters">Chapters 1–80</span>
+            <p>Taiki meets Chinatsu and falls deeply in love. Chinatsu becomes his housemate after a family situation.</p>
           </div>
         </div>
-        <div class="arc-item">
-          <div class="arc-dot"></div>
+        <div class="story-arc">
+          <div class="arc-number">Arc 02</div>
           <div class="arc-content">
-            <span class="arc-chapters">Ch. 31–80</span>
-            <h3>Living Together</h3>
-            <p>Daily life under the same roof brings them closer — and makes feelings harder to hide.</p>
+            <h3>Tournament Trials</h3>
+            <span class="arc-chapters">Chapters 81–140</span>
+            <p>Both pursue their athletic dreams. Tournaments and trials intensify their feelings.</p>
           </div>
         </div>
-        <div class="arc-item">
-          <div class="arc-dot"></div>
+        <div class="story-arc">
           <div class="arc-content">
-            <span class="arc-chapters">Ch. 81–140</span>
-            <h3>Tournaments & Trials</h3>
-            <p>Both push their limits in their respective sports while emotions reach a boiling point.</p>
-          </div>
-        </div>
-        <div class="arc-item">
-          <div class="arc-dot"></div>
-          <div class="arc-content">
-            <span class="arc-chapters">Ch. 141+</span>
             <h3>Confessions & Beyond</h3>
-            <p>The truth comes out. Hearts are bared. The story enters its most emotional chapter yet.</p>
+            <span class="arc-chapters">Chapters 141</span>
+            <p>The long-awaited confession happens. Hearts speak, new chapters begin.</p>
           </div>
         </div>
       </div>
       <div class="section-cta">
-        <a href="lore.html" class="btn btn-outline">Full Story Timeline</a>
+        <a href="lore.html" class="btn btn-outline">Full Timeline</a>
       </div>
     </div>
   </section>
 
-  <!-- ======= MUSIC PREVIEW ======= -->
+  <!-- MUSIC PREVIEW -->
   <section id="music-preview" class="section dark-section">
     <div class="container">
       <div class="section-tag">Soundtrack</div>
-      <h2 class="section-title">Music</h2>
-      <div class="music-cards">
+      <h2 class="section-title">Official Music</h2>
+      <div class="music-grid">
         <div class="music-card">
           <div class="music-icon"><i class="fas fa-compact-disc spin-slow"></i></div>
           <div class="music-info">
@@ -261,7 +267,7 @@
     </div>
   </section>
 
-  <!-- ======= FOOTER ======= -->
+  <!-- FOOTER -->
   <footer id="footer">
     <div class="container">
       <div class="footer-logo">
@@ -282,15 +288,16 @@
     </div>
   </footer>
 
-  <!-- ======= MUSIC PLAYER (hidden) ======= -->
+  <!-- MUSIC PLAYER (hidden) -->
   <div id="music-player">
     <audio id="bg-audio" loop>
-      <!-- Add your audio source here -->
+      <source src="assets/audio/ティーンエイジブルー (Teenage Blue) – Eve Official Audio.mp3" type="audio/mpeg" />
     </audio>
   </div>
 
   <script src="js/main.js"></script>
   <script src="js/animations.js"></script>
   <script src="js/particles.js"></script>
+  <script src="js/hero.js"></script>
 </body>
 </html>

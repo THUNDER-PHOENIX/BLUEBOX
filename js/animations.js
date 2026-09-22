@@ -1,71 +1,148 @@
 // ============================================
-//   BLUE BOX — Animations JS (GSAP-free)
+//   BLUE BOX — Animation Utilities
 // ============================================
 
+// Auto-initialize all reveal animations on DOM ready
 document.addEventListener('DOMContentLoaded', () => {
-
-  // ---- HERO TITLE LETTER SPLIT EFFECT ----
-  const heroEn = document.querySelector('.hero-en');
-  if (heroEn) {
-    const text = heroEn.textContent;
-    heroEn.innerHTML = text.split('').map((char, i) =>
-      `<span style="
-        display:inline-block;
-        animation: fadeInUp 0.5s ease ${0.2 + i * 0.05}s forwards;
-        opacity: 0;
-      ">${char === ' ' ? '&nbsp;' : char}</span>`
-    ).join('');
-  }
-
-  // ---- CURSOR GLOW TRAIL ----
-  const cursor = document.createElement('div');
-  cursor.id = 'cursor-glow';
-  Object.assign(cursor.style, {
-    position:     'fixed',
-    width:        '300px',
-    height:       '300px',
-    background:   'radial-gradient(circle, rgba(59,130,246,0.08) 0%, transparent 70%)',
-    borderRadius: '50%',
-    pointerEvents:'none',
-    transform:    'translate(-50%, -50%)',
-    zIndex:       '0',
-    transition:   'left 0.08s ease, top 0.08s ease',
-  });
-  document.body.appendChild(cursor);
-
-  document.addEventListener('mousemove', e => {
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top  = e.clientY + 'px';
-  });
-
-  // ---- SMOOTH HOVER ON CARDS ----
-  document.querySelectorAll('.stat-card, .char-card, .arc-content, .music-card').forEach(card => {
-    card.addEventListener('mouseenter', function(e) {
-      const rect = this.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      const xPercent = (x / rect.width  - 0.5) * 20;
-      const yPercent = (y / rect.height - 0.5) * 20;
-      if (!this.classList.contains('char-card')) {
-        this.style.transform = `perspective(800px) rotateX(${-yPercent * 0.3}deg) rotateY(${xPercent * 0.3}deg) translateY(-4px)`;
-      }
-    });
-    card.addEventListener('mouseleave', function() {
-      if (!this.classList.contains('char-card')) {
-        this.style.transform = '';
-      }
-    });
-  });
-
-  // ---- NAVBAR LOGO PULSE ON HOVER ----
-  const navLogo = document.querySelector('.nav-logo-jp');
-  if (navLogo) {
-    navLogo.addEventListener('mouseenter', () => {
-      navLogo.style.animation = 'pulse 0.8s ease';
-    });
-    navLogo.addEventListener('animationend', () => {
-      navLogo.style.animation = '';
-    });
-  }
-
+  initRevealAnimations();
+  initParticleEffects();
 });
+
+function initRevealAnimations() {
+  const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+
+  const observerOptions = {
+    threshold: 0.15,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  revealElements.forEach(el => observer.observe(el));
+}
+
+function initParticleEffects() {
+  // Enhanced particle effects for hero section
+  const heroParticles = document.getElementById('hero-particles');
+  if (heroParticles) {
+    createHeroParticles();
+  }
+
+  // Character card hover effects
+  initCharacterCards();
+}
+
+function createHeroParticles() {
+  const container = document.getElementById('hero-particles');
+  if (!container) return;
+
+  // Clear any existing particles
+  container.innerHTML = '';
+
+  const particleCount = window.innerWidth > 768 ? 80 : 40;
+
+  for (let i = 0; i < particleCount; i++) {
+    setTimeout(() => {
+      createParticle(container);
+    }, i * 50);
+  }
+}
+
+function createParticle(container) {
+  const particle = document.createElement('div');
+  particle.className = 'particle';
+
+  // Random properties
+  const size = Math.random() * 6 + 2;
+  const startX = Math.random() * 100;
+  const startY = Math.random() * 100;
+  const endX = Math.random() * 100 - 50;
+  const endY = Math.random() * 100 + 50;
+  const duration = Math.random() * 30 + 20;
+  const delay = Math.random() * 20;
+
+  // Set particle styles
+  particle.style.position = 'absolute';
+  particle.style.width = size + 'px';
+  particle.style.height = size + 'px';
+  particle.style.background = getRandomParticleColor();
+  particle.style.borderRadius = '50%';
+  particle.style.opacity = Math.random() * 0.5 + 0.1;
+  particle.style.left = startX + '%';
+  particle.style.top = startY + '%';
+  particle.style.animation = `floatParticle ${duration}s linear infinite`;
+  particle.style.animationDelay = delay + 's';
+
+  // Add floating animation
+  const floatKeyframes = `
+    @keyframes floatParticle {
+      from {
+        transform: translate(0, 0);
+      }
+      to {
+        transform: translate(${endX}px, ${endY}px);
+        opacity: 0;
+      }
+    }
+  `;
+
+  // Inject keyframes into style tag
+  let styleTag = document.getElementById('particle-keyframes');
+  if (!styleTag) {
+    styleTag = document.createElement('style');
+    styleTag.id = 'particle-keyframes';
+    document.head.appendChild(styleTag);
+  }
+  styleTag.textContent += floatKeyframes;
+
+  container.appendChild(particle);
+}
+
+function getRandomParticleColor() {
+  const blues = ['#3b82f6', '#60a5fa', '#1d4ed8', '#2563eb', '#1e40af', '#0944b4'];
+  const accents = ['#f472b6', '#ec4899', '#db2777', '#be185d', '#9d174d', '#831843'];
+
+  const useBlue = Math.random() > 0.5;
+  const colors = useBlue ? blues : accents;
+  return colors[Math.floor(Math.random() * colors.length)];
+}
+
+function initCharacterCards() {
+  const charCards = document.querySelectorAll('.char-card');
+
+  charCards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      card.style.transform = 'scale(1.05)';
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'scale(1)';
+    });
+  });
+}
+
+// Clean up particles on page hide
+window.addEventListener('beforeunload', () => {
+  const particles = document.querySelectorAll('.particle');
+  particles.forEach(particle => particle.remove();
+});
+
+// Performance optimization for reduced motion
+if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const style = document.createElement('style');
+  style.textContent = `
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  `;
+  document.head.appendChild(style);
+}
